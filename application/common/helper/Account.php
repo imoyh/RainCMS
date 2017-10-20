@@ -10,6 +10,7 @@ class Account
     {   
         Session::set('username', $user['username']);
         Session::set('auth_code', $user['auth_code']);
+        return true;
     }
 
 }

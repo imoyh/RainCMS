@@ -23,7 +23,7 @@ class User extends Controller
     {
         $request = Request::instance();
         
-        if($request->isGet()) {
+        if($request->isPost()) {
         
             ## 获取参数
             $param = $request->param();
@@ -61,13 +61,12 @@ class User extends Controller
             $account = new HelperAccount;
             $param['username'] = $user['username'];
             $param['auth_code'] = $result['auth_code'];
-            return $account->login($param);
+            $account->login($param);
+            $this->success('登录成功');
             
         }
 
-
-
-
+        return $this->fetch();
     }
 
     public function register()
@@ -106,5 +105,6 @@ class User extends Controller
             
         }
         
+        return $this->fetch();
     }
 }

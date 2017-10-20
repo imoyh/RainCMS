@@ -16,7 +16,7 @@ class User
         $rule = [
             'account'    => ['require'],
             'password'   => ['require'],
-            'captcha'    => ['require']
+            'captcha'    => ['require','captcha']
         ];
 
         $msg = [
@@ -66,7 +66,7 @@ class User
             'password'      =>  ['require', 'min' => 6, 'regex' => '/^.*(?=.*\d)(?=.*[A-Za-z]).*$/'],
             'repassword'    =>  ['require', 'confirm' => 'password'],
             'accept'        =>  ['accepted'],
-            'captcha'       =>  ['require']
+            'captcha'       =>  ['require','captcha']
         ];
 
         $msg = [
