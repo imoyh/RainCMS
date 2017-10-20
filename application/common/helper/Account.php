@@ -8,12 +8,8 @@ class Account
 {
     public function login($user)
     {   
-
-        return $user;
         Session::set('username', $user['username']);
-
-
-
+        Session::set('auth_code', $user['auth_code']);
     }
 
 }

@@ -60,6 +60,7 @@ class User extends Controller
             ## 设置登录状态
             $account = new HelperAccount;
             $param['username'] = $user['username'];
+            $param['auth_code'] = $result['auth_code'];
             return $account->login($param);
             
         }
