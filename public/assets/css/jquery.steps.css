@@ -116,7 +116,7 @@
 .wizard > .steps .current a:hover,
 .wizard > .steps .current a:active
 {
-    background: #A9D86E;
+    background: #2184be;
     color: #fff;
     cursor: default;
 }
@@ -125,7 +125,7 @@
 .wizard > .steps .done a:hover,
 .wizard > .steps .done a:active
 {
-    background: #ccc;
+    background: #9dc8e2;
     color: #fff;
 }
 
@@ -133,17 +133,16 @@
 .wizard > .steps .error a:hover,
 .wizard > .steps .error a:active
 {
-    background: #ff6c60;
+    background: #ff3111;
     color: #fff;
 }
 
 .wizard > .content
 {
-    /*background: #eee;*/
-    border: 1px solid #eee;
+    background: #eee;
     display: block;
     margin: 0.5em;
-    min-height: 350px;
+    min-height: 320px;
     overflow: hidden;
     position: relative;
     width: auto;
@@ -164,10 +163,11 @@
 
 .wizard > .content > .body
 {
-    float: left;
+   
     position: absolute;
     width: 95%;
     height: 95%;
+    padding: 2.5%;
 }
 
 .wizard > .content > .body ul
@@ -202,24 +202,20 @@
 {
     background: rgb(251, 227, 228);
     border: 1px solid #fbc2c4;
-    color: #ff6c60;
-    font-weight: normal;
+    color: #8a1f11;
 }
 
 .wizard > .content > .body label
 {
     display: inline-block;
-    margin-bottom: 0px;
-    padding-top: 7px;
-    font-weight: normal;
+    margin-bottom: 0.5em;
 }
 
 .wizard > .content > .body label.error
 {
-    color: #ff6c60;
+    color: #8a1f11;
     display: inline-block;
-    /*margin-left: 1.5em;*/
-    font-weight: normal;
+    margin-left: 1.5em;
 }
 
 .wizard > .actions
@@ -258,7 +254,7 @@
 .wizard > .actions a:hover,
 .wizard > .actions a:active
 {
-    background: #53bee6;
+    background: #2184be;
     color: #fff;
     display: block;
     padding: 0.5em 1em;

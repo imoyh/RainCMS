@@ -3,7 +3,7 @@
 // | Description: 
 // +----------------------------------------------------
 // | Author: OuYangHao [oyhemail@163.com]
-// | Last Modified: 2017-10-20
+// | Last Modified: 2017-10-21
 //+----------------------------------------------------
 
 namespace app\admin\controller;
@@ -16,11 +16,23 @@ use app\common\validate\Common as ValidateCommon;
 
 use think\Facade\Request;
 
-use app\admin\controller\AppCommon as Controller;
-class User extends Controller
+use app\admin\controller\AppBase;
+class User extends AppBase
 {
+    public function __construct()
+    {   
+        parent::__construct();
+    }
+    
+    /**
+     * 登录
+     *
+     * @return void
+     */
     public function login()
     {
+        ## 验证是否登录
+        $this->isLogin('/');
         $request = Request::instance();
         
         if($request->isPost()) {
@@ -62,18 +74,24 @@ class User extends Controller
             $param['username'] = $user['username'];
             $param['auth_code'] = $result['auth_code'];
             $account->login($param);
-            $this->success('登录成功');
+            $this->success('登录成功','/');
             
         }
 
         return $this->fetch();
     }
 
+    /**
+     * 注册
+     *
+     * @return void
+     */
     public function register()
-    {
+    {   
+        $this->isLogin('/');
         $request = Request::instance();
-        
-        if($request->isGet()) {
+
+        if($request->isPost()) {
         
             ## 获取参数
             $param = $request->param();
@@ -100,6 +118,8 @@ class User extends Controller
             $result = $userModel->add($param);
 
             if($result) {
+                $account = new HelperAccount;
+                $account->login($param);
                 $this->success('注册成功', '/', '', 0);
             }
             

@@ -10,9 +10,9 @@
 // +----------------------------------------------------------------------
 
 
-Route::get('admin/login', '@admin/user/login');
+Route::get('login', '@admin/user/login');
 Route::get('register', '@admin/user/register');
-Route::post('admin/login', '@admin/user/login');
+Route::post('login', '@admin/user/login');
 Route::post('register', '@admin/user/register');
 
 

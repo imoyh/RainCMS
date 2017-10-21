@@ -3,7 +3,7 @@
 // | Description: 
 // +----------------------------------------------------
 // | Author: OuYangHao [oyhemail@163.com]
-// | Last Modified: 2017-10-20
+// | Last Modified: 2017-10-21
 //+----------------------------------------------------
 namespace app\common\validate;
 
@@ -65,7 +65,7 @@ class User
             'email'         =>  ['require', 'email'],
             'password'      =>  ['require', 'min' => 6, 'regex' => '/^.*(?=.*\d)(?=.*[A-Za-z]).*$/'],
             'repassword'    =>  ['require', 'confirm' => 'password'],
-            'accept'        =>  ['accepted'],
+            'agree'         =>  ['require'],
             'captcha'       =>  ['require','captcha']
         ];
 
@@ -142,11 +142,11 @@ class User
             ],
 
             // 条款，验证码
-            'accept.require'    => [
+            'agree.require'    => [
                 'code'      => 0,
                 'msg'       => '需要同意条款才能完成注册',
                 'data'      => [
-                    'name'  => 'accept'
+                    'name'  => 'agree'
                 ],
             ],
             'captcha.require'   => [

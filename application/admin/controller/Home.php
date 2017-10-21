@@ -2,15 +2,22 @@
 namespace app\admin\controller;
 
 
-class Home
+use app\admin\controller\AppPrivate;
+class Home extends AppPrivate
 {
-    public function index()
-    {
-        return '<a href="/admin/login">登录</a>';
+
+    public function __construct()
+    {   
+        parent::__construct();
+        $this->isNotLogin('/login');
     }
 
-    public function hello($name = 'ThinkPHP5')
+    public function index()
     {
-        return 'hello,' . $name;
+        return $this->fetch();
     }
+
+
+
+
 }
