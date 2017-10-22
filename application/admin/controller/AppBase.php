@@ -1,15 +1,16 @@
 <?php
-//+----------------------------------------------------
+//+----------------------------------------------------|
 // | Description: 
-// +----------------------------------------------------
+// +---------------------------------------------------|
 // | Author: OuYangHao [oyhemail@163.com]
-// | Last Modified: 2017-10-21
-//+----------------------------------------------------
+// | Last Modified: 2017-10-22
+//+----------------------------------------------------|
 namespace app\admin\controller;
 
 use think\Facade\Session;
 use think\Facade\Cookie;
 use think\Facade\Request;
+use think\Facade\Response;
 
 use think\Controller;
 
@@ -32,6 +33,7 @@ class AppBase extends Controller
     {   
         ## 验证session中是否存在用户名
         if(Session::has('username')) {
+            
             ## 如果传入url则自动跳转
             if($url != '') {
                 $this->success($text, $url, '', 2);

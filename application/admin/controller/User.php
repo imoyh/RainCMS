@@ -1,10 +1,10 @@
 <?php
-//+----------------------------------------------------
+//+----------------------------------------------------|
 // | Description: 
-// +----------------------------------------------------
+// +---------------------------------------------------|
 // | Author: OuYangHao [oyhemail@163.com]
-// | Last Modified: 2017-10-21
-//+----------------------------------------------------
+// | Last Modified: 2017-10-22
+//+----------------------------------------------------|
 
 namespace app\admin\controller;
 
@@ -16,8 +16,8 @@ use app\common\validate\Common as ValidateCommon;
 
 use think\Facade\Request;
 
-use app\admin\controller\AppBase;
-class User extends AppBase
+use app\admin\controller\AppBase as Controller;
+class User extends Controller
 {
     public function __construct()
     {   
@@ -30,7 +30,8 @@ class User extends AppBase
      * @return void
      */
     public function login()
-    {
+    {   
+
         ## 验证是否登录
         $this->isLogin('/');
         $request = Request::instance();
