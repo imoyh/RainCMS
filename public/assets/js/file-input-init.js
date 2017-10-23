@@ -32,6 +32,7 @@ $("#file-4").fileinput({
     uploadExtraData: [
         {kvId: '10'}
     ],
+    language : 'zh'
 });
 $(".btn-warning").on('click', function() {
     if ($('#file-4').attr('disabled')) {

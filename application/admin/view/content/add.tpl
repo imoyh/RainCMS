@@ -3,11 +3,20 @@
 
 
 {block name="style"}
+    <!--bootstrap-fileinput-master-->
+    <link rel="stylesheet" type="text/css" href="/assets/js/bootstrap-fileinput-master/css/fileinput.css" />
 
 {/block}
 
 
 {block name="script"}
+    
+
+    <!--bootstrap-fileinput-master-->
+    <script type="text/javascript" src="/assets/js/bootstrap-fileinput-master/js/fileinput.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap-fileinput-master/js/locales/zh.js"></script>
+    <script type="text/javascript" src="/assets/js/file-input-init.js"></script>
+
     <script type="text/javascript" src="/assets/plugins/tinymce/tinymce.min.js"></script>
     <script>
     tinymce.init({
@@ -85,75 +94,44 @@
         <div class="col-lg-3">
             <section class="panel">
                 <header class="panel-heading">
+                    附件设置
+                </header>
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <input id="file-4" class="file" type="file" multiple=true>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="panel">
+                <header class="panel-heading">
                     发布设置
                 </header>
                 <div class="panel-body">
                     <div class="form-horizontal">
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <div class="input-group m-b-10">
-                                    <span class="input-group-addon">分类</span>
-                                    <select class="form-control  select2" name="cid">
+                                <div class="input-group">
+                                    <span class="input-group-addon">选择分类</span>
+                                    <select class="form-control" name="cid">
                                         <option></option>
                                         <optgroup label="Alaskan/Hawaiian Time Zone">
                                             <option value="AK">Alaska</option>
-                                            <option value="HI">Hawaii</option>
                                         </optgroup>
                                         <optgroup label="Pacific Time Zone">
                                             <option value="CA">California</option>
-                                            <option value="NV">Nevada</option>
-                                            <option value="OR">Oregon</option>
-                                            <option value="WA">Washington</option>
                                         </optgroup>
                                         <optgroup label="Mountain Time Zone">
-                                            <option value="AZ">Arizona</option>
-                                            <option value="CO">Colorado</option>
-                                            <option value="ID">Idaho</option>
-                                            <option value="MT">Montana</option>
-                                            <option value="NE">Nebraska</option>
-                                            <option value="NM">New Mexico</option>
-                                            <option value="ND">North Dakota</option>
-                                            <option value="UT">Utah</option>
                                             <option value="WY">Wyoming</option>
                                         </optgroup>
                                         <optgroup label="Central Time Zone">
-                                            <option value="AL">Alabama</option>
-                                            <option value="AR">Arkansas</option>
-                                            <option value="IL">Illinois</option>
-                                            <option value="IA">Iowa</option>
-                                            <option value="KS">Kansas</option>
-                                            <option value="KY">Kentucky</option>
-                                            <option value="LA">Louisiana</option>
-                                            <option value="MN">Minnesota</option>
-                                            <option value="MS">Mississippi</option>
-                                            <option value="MO">Missouri</option>
-                                            <option value="OK">Oklahoma</option>
-                                            <option value="SD">South Dakota</option>
-                                            <option value="TX">Texas</option>
-                                            <option value="TN">Tennessee</option>
                                             <option value="WI">Wisconsin</option>
                                         </optgroup>
                                         <optgroup label="Eastern Time Zone">
                                             <option value="CT">Connecticut</option>
-                                            <option value="DE">Delaware</option>
-                                            <option value="FL">Florida</option>
-                                            <option value="GA">Georgia</option>
-                                            <option value="IN">Indiana</option>
-                                            <option value="ME">Maine</option>
-                                            <option value="MD">Maryland</option>
-                                            <option value="MA">Massachusetts</option>
-                                            <option value="MI">Michigan</option>
-                                            <option value="NH">New Hampshire</option>
-                                            <option value="NJ">New Jersey</option>
-                                            <option value="NY">New York</option>
-                                            <option value="NC">North Carolina</option>
-                                            <option value="OH">Ohio</option>
-                                            <option value="PA">Pennsylvania</option>
-                                            <option value="RI">Rhode Island</option>
-                                            <option value="SC">South Carolina</option>
-                                            <option value="VT">Vermont</option>
-                                            <option value="VA">Virginia</option>
-                                            <option value="WV">West Virginia</option>
                                         </optgroup>
                                     </select>
                                 </div>
@@ -161,9 +139,9 @@
                         </div>
                         <div class="form-group">
                             <div class="col-lg-12">
-                                <div class="input-group m-b-10">
-                                    <span class="input-group-addon">模型</span>
-                                    <select class="form-control  select2" name="cid">
+                                <div class="input-group">
+                                    <span class="input-group-addon">选择模型</span>
+                                    <select class="form-control" name="cid">
                                         <option></option>
                                         <optgroup label="Alaskan/Hawaiian Time Zone">
                                             <option value="AK">Alaska</option>
@@ -171,68 +149,32 @@
                                         </optgroup>
                                         <optgroup label="Pacific Time Zone">
                                             <option value="CA">California</option>
-                                            <option value="NV">Nevada</option>
-                                            <option value="OR">Oregon</option>
-                                            <option value="WA">Washington</option>
                                         </optgroup>
                                         <optgroup label="Mountain Time Zone">
                                             <option value="AZ">Arizona</option>
                                             <option value="CO">Colorado</option>
-                                            <option value="ID">Idaho</option>
-                                            <option value="MT">Montana</option>
-                                            <option value="NE">Nebraska</option>
-                                            <option value="NM">New Mexico</option>
-                                            <option value="ND">North Dakota</option>
-                                            <option value="UT">Utah</option>
-                                            <option value="WY">Wyoming</option>
                                         </optgroup>
                                         <optgroup label="Central Time Zone">
                                             <option value="AL">Alabama</option>
-                                            <option value="AR">Arkansas</option>
-                                            <option value="IL">Illinois</option>
-                                            <option value="IA">Iowa</option>
-                                            <option value="KS">Kansas</option>
-                                            <option value="KY">Kentucky</option>
-                                            <option value="LA">Louisiana</option>
-                                            <option value="MN">Minnesota</option>
-                                            <option value="MS">Mississippi</option>
-                                            <option value="MO">Missouri</option>
-                                            <option value="OK">Oklahoma</option>
-                                            <option value="SD">South Dakota</option>
-                                            <option value="TX">Texas</option>
-                                            <option value="TN">Tennessee</option>
-                                            <option value="WI">Wisconsin</option>
                                         </optgroup>
                                         <optgroup label="Eastern Time Zone">
                                             <option value="CT">Connecticut</option>
-                                            <option value="DE">Delaware</option>
-                                            <option value="FL">Florida</option>
-                                            <option value="GA">Georgia</option>
-                                            <option value="IN">Indiana</option>
-                                            <option value="ME">Maine</option>
-                                            <option value="MD">Maryland</option>
-                                            <option value="MA">Massachusetts</option>
-                                            <option value="MI">Michigan</option>
-                                            <option value="NH">New Hampshire</option>
-                                            <option value="NJ">New Jersey</option>
-                                            <option value="NY">New York</option>
-                                            <option value="NC">North Carolina</option>
-                                            <option value="OH">Ohio</option>
-                                            <option value="PA">Pennsylvania</option>
-                                            <option value="RI">Rhode Island</option>
-                                            <option value="SC">South Carolina</option>
-                                            <option value="VT">Vermont</option>
-                                            <option value="VA">Virginia</option>
-                                            <option value="WV">West Virginia</option>
                                         </optgroup>
                                     </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon">发表时间</span>
+                                    <input type="datetime-local" class="form-control"/> 
                                 </div>
                             </div>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> 保存草稿</button>
                             <button type="submit" class="btn btn-info"><i class="fa fa-eject"></i> 立即发布</button>
-                            <button type="submit" class="btn btn-success"><i class="fa fa-eye"></i> 预览</button>
                         </div>
                     </div>
                 </div>

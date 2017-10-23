@@ -93,7 +93,6 @@
 
 {block name="script"}{/block}
 
-
 <!--common scripts for all pages-->
 <script src="/assets/js/scripts.js"></script>
 
