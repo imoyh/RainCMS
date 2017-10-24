@@ -35,13 +35,12 @@
       <script src="/assets/js/jquery-1.11.1.min.js"></script>
       <!--Bootstrap Js-->
       <script src="/assets/js/bootstrap.min.js"></script>
-      <script src="/assets/js/jrespond.min.js"></script>
 
       <!--form validation-->
       <script type="text/javascript" src="/assets/js/jquery.validate.min.js"></script>
 
       <!--Page Js-->
-      <script src="/assets/page/sign.js"></script>
+      <script src="/assets/page/js/sign.js"></script>
 
   </body>
 </html>

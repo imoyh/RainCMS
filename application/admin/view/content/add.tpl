@@ -3,21 +3,12 @@
 
 
 {block name="style"}
-    <!--bootstrap-fileinput-master-->
-    <link rel="stylesheet" type="text/css" href="/assets/js/bootstrap-fileinput-master/css/fileinput.css" />
 
 {/block}
 
 
 {block name="script"}
-    
-
-    <!--bootstrap-fileinput-master-->
-    <script type="text/javascript" src="/assets/js/bootstrap-fileinput-master/js/fileinput.js"></script>
-    <script type="text/javascript" src="/assets/js/bootstrap-fileinput-master/js/locales/zh.js"></script>
-    <script type="text/javascript" src="/assets/js/file-input-init.js"></script>
-
-    <script type="text/javascript" src="/assets/plugins/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="/assets/lib/tinymce/tinymce.min.js"></script>
     <script>
     tinymce.init({
         selector: 'textarea',
@@ -36,6 +27,22 @@
             '//www.tinymce.com/css/codepen.min.css'
         ]
     });
+
+
+    //时间选择器
+    layui.laydate.render({
+        elem: '#datetime-1',
+        type: 'datetime'
+    });
+
+    layui.upload.render({
+        elem: '#test10',
+        url: '/upload/',
+        done: function(res){
+            console.log(res)
+        }
+  });
+
     </script>
 
 {/block}
@@ -63,7 +70,7 @@
 
 
 {block name="wrapper"}
-<form role="form" method="get">
+<form class="" role="form" method="get">
     <div class="row">
 
         <div class="col-lg-9">
@@ -97,11 +104,10 @@
                     附件设置
                 </header>
                 <div class="panel-body">
-                    <div class="form-horizontal">
-                        <div class="form-group">
-                            <div class="col-lg-12">
-                                <input id="file-4" class="file" type="file" multiple=true>
-                            </div>
+                    <div class="form-group">
+                        <div class="col-lg-12 layui-upload-drag" id="test10">
+                            <i class="layui-icon"></i>
+                            <p>点击上传，或将文件拖拽到此处</p>
                         </div>
                     </div>
                 </div>
@@ -115,24 +121,13 @@
                         <div class="form-group">
                             <div class="col-lg-12">
                                 <div class="input-group">
-                                    <span class="input-group-addon">选择分类</span>
+                                    <span class="input-group-addon">选择分类</span>                                    
                                     <select class="form-control" name="cid">
-                                        <option></option>
-                                        <optgroup label="Alaskan/Hawaiian Time Zone">
-                                            <option value="AK">Alaska</option>
-                                        </optgroup>
-                                        <optgroup label="Pacific Time Zone">
-                                            <option value="CA">California</option>
-                                        </optgroup>
-                                        <optgroup label="Mountain Time Zone">
-                                            <option value="WY">Wyoming</option>
-                                        </optgroup>
-                                        <optgroup label="Central Time Zone">
-                                            <option value="WI">Wisconsin</option>
-                                        </optgroup>
-                                        <optgroup label="Eastern Time Zone">
-                                            <option value="CT">Connecticut</option>
-                                        </optgroup>
+                                        <option value="0">写作</option>
+                                        <option value="1" selected="">阅读</option>
+                                        <option value="2">游戏</option>
+                                        <option value="3">音乐</option>
+                                        <option value="4">旅行</option>
                                     </select>
                                 </div>
                             </div>
@@ -142,24 +137,11 @@
                                 <div class="input-group">
                                     <span class="input-group-addon">选择模型</span>
                                     <select class="form-control" name="cid">
-                                        <option></option>
-                                        <optgroup label="Alaskan/Hawaiian Time Zone">
-                                            <option value="AK">Alaska</option>
-                                            <option value="HI">Hawaii</option>
-                                        </optgroup>
-                                        <optgroup label="Pacific Time Zone">
-                                            <option value="CA">California</option>
-                                        </optgroup>
-                                        <optgroup label="Mountain Time Zone">
-                                            <option value="AZ">Arizona</option>
-                                            <option value="CO">Colorado</option>
-                                        </optgroup>
-                                        <optgroup label="Central Time Zone">
-                                            <option value="AL">Alabama</option>
-                                        </optgroup>
-                                        <optgroup label="Eastern Time Zone">
-                                            <option value="CT">Connecticut</option>
-                                        </optgroup>
+                                        <option value="0">写作</option>
+                                        <option value="1" selected="">阅读</option>
+                                        <option value="2">游戏</option>
+                                        <option value="3">音乐</option>
+                                        <option value="4">旅行</option>
                                     </select>
                                 </div>
                             </div>
@@ -168,7 +150,7 @@
                             <div class="col-lg-12">
                                 <div class="input-group">
                                     <span class="input-group-addon">发表时间</span>
-                                    <input type="datetime-local" class="form-control"/> 
+                                    <input type="text" class="layui-input form-control" id="datetime-1" placeholder="yyyy-MM-dd HH:mm:ss">
                                 </div>
                             </div>
                         </div>
