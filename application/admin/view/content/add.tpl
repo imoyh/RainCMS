@@ -11,7 +11,7 @@
     <script type="text/javascript" src="/assets/lib/tinymce/tinymce.min.js"></script>
     <script>
     tinymce.init({
-        selector: 'textarea',
+        selector: '.content-editor',
         height: 500,
         theme: 'modern',
         plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern',
@@ -38,6 +38,7 @@
     layui.upload.render({
         elem: '#test10',
         url: '/upload/',
+        auto: false,
         done: function(res){
             console.log(res)
         }
@@ -70,35 +71,55 @@
 
 
 {block name="wrapper"}
-<form class="" role="form" method="get">
+<form class="layui-form" role="form" method="get">
+
     <div class="row">
 
-        <div class="col-lg-9">
+        <div class="col-lg-9 col-md-8">
             <section class="panel">
                 <header class="panel-heading">
                     内容编辑
                 </header>
                 <div class="panel-body">
                     <div class="form-group">
-                        <div class="col-lg-12">
-                            <div class="input-group m-b-10">
-                                <span class="input-group-addon">标题</span>
-                                <input type="text" name="title" class="form-control" placeholder="请输入标题">
-                            </div>
+                        <div class="input-group">
+                            <span class="input-group-addon">标题</span>
+                            <input type="text" name="title" class="layui-input" placeholder="请输入标题">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <div class="col-lg-12">
-                            <p></p>
-                            <textarea name="content" class="content-editor">Initialize the Froala WYSIWYG HTML Editor on a textarea.</textarea>
+                        <p></p>
+                        <textarea name="content" class="content-editor"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel">
+                <header class="panel-heading">
+                    SEO设置
+                </header>
+                <div class="panel-body layui-form-pane">
+
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">关键词</label>
+                        <div class="layui-input-block">
+                            <textarea name="keywords" class="tags-input layui-textarea" data-type="tags"></textarea>
                         </div>
                     </div>
+
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">页面描述</label>
+                        <div class="layui-input-block">
+                        <textarea name="description" placeholder="请输入内容" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </div>
         
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-4">
             <section class="panel">
                 <header class="panel-heading">
                     附件设置
@@ -107,7 +128,7 @@
                     <div class="form-group">
                         <div class="col-lg-12 layui-upload-drag" id="test10">
                             <i class="layui-icon"></i>
-                            <p>点击上传，或将文件拖拽到此处</p>
+                            <p>点击上传，或将图片拖拽到此处</p>
                         </div>
                     </div>
                 </div>
@@ -117,12 +138,14 @@
                     发布设置
                 </header>
                 <div class="panel-body">
+
+  
                     <div class="form-horizontal">
                         <div class="form-group">
                             <div class="col-lg-12">
                                 <div class="input-group">
-                                    <span class="input-group-addon">选择分类</span>                                    
-                                    <select class="form-control" name="cid">
+                                    <span class="input-group-addon"  lay-filter="aihao">选择分类</span>                                    
+                                    <select class="layui-input layui-unselect" name="cid">
                                         <option value="0">写作</option>
                                         <option value="1" selected="">阅读</option>
                                         <option value="2">游戏</option>
@@ -136,7 +159,7 @@
                             <div class="col-lg-12">
                                 <div class="input-group">
                                     <span class="input-group-addon">选择模型</span>
-                                    <select class="form-control" name="cid">
+                                    <select class="layui-input layui-unselect" name="mid">
                                         <option value="0">写作</option>
                                         <option value="1" selected="">阅读</option>
                                         <option value="2">游戏</option>
@@ -150,7 +173,28 @@
                             <div class="col-lg-12">
                                 <div class="input-group">
                                     <span class="input-group-addon">发表时间</span>
-                                    <input type="text" class="layui-input form-control" id="datetime-1" placeholder="yyyy-MM-dd HH:mm:ss">
+                                    <input type="text" class="layui-input" name="addtime" id="datetime-1" placeholder="yyyy-MM-dd HH:mm:ss">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon">内容来源</span>
+                                    <div class="layui-input">
+                                        <input type="radio" name="author" value="1" title="原创" checked="">
+                                        <input type="radio" name="author" value="0" title="引用">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon">来源地址</span>
+                                    <input type="text" class="layui-input" name="source" placeholder="原创内容不用填写">
                                 </div>
                             </div>
                         </div>

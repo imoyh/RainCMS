@@ -1,0 +1,52 @@
+textarea + .tagsinput {
+    border: 1px solid #ddd;
+    height: auto !important;
+    position: relative;
+    overflow: auto;
+}
+
+textarea + .tagsinput .tag {
+    display: inline-block;
+    background-color: #5FB878;
+    color: #fff;
+    margin: 0.4em 0 0 0.4em;
+}
+
+textarea + .tagsinput .tag + div {
+    margin-top: 0.4em;
+}
+
+textarea + .tagsinput > div {
+    width: 100%;
+    padding: 10px;
+    margin-top: -1px;
+    border-top: 1px solid #ddd;
+    background-color: #fbfbfb;
+}
+
+textarea + .tagsinput > .tags_clear {
+    padding: 0;
+    margin-top: 0;
+    border-top: 0;
+}
+
+textarea + .tagsinput .tag span {
+    display: inline-block;
+    padding: 0.5em 1em;
+}
+
+textarea + .tagsinput .tag a {
+    display: inline-block;
+    color: #fff;
+    padding: 0.5em 1em;
+    background-color: #459170;
+}
+
+
+textarea + .tagsinput input {
+    width: 100% !important;
+    height: 36px;
+    padding: 0 1em;
+    color: #767676 !important;
+    border: 1px solid #ddd;
+}

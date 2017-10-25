@@ -636,7 +636,8 @@ div.mce-tinymce-inline {
 
 .mce-panel {
     border: 0 solid #e2e2e2;
-    background-color: #fff
+    background-color: #fff;
+    box-sizing: border-box
 }
 
 .mce-floatpanel {

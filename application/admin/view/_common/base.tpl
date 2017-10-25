@@ -19,6 +19,7 @@
 
     <!--common style-->
     <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/lib/plugins.css" rel="stylesheet">
     <link href="/assets/css/style-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -73,9 +74,10 @@
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/modernizr.min.js"></script>
 <script src="/assets/lib/layui/layui.all.js"></script>
+<script src="/assets/lib/plugins.js"></script>
 
 <!--Nice Scroll-->
-<script src="/assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+<!--script src="/assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 
 <!--right slidebar-->
 <script src="/assets/js/slidebars.min.js"></script>

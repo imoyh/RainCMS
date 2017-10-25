@@ -123,29 +123,6 @@
         $.slidebars();
     });
 
-    // body scroll
-
-    $("html").niceScroll({
-        styler: "fb",
-        cursorcolor: "#a979d1",
-        cursorwidth: '5',
-        cursorborderradius: '15px',
-        background: '#404040',
-        cursorborder: '',
-        zindex: '12000'
-    });
-
-    $(".notification-list-scroll").niceScroll({
-        styler: "fb",
-        cursorcolor: "#DFDFE2",
-        cursorwidth: '3',
-        cursorborderradius: '15px',
-//        background: '#404040',
-        cursorborder: '',
-        zindex: '12000'
-    });
-
-
 
     // collapsible panel
     

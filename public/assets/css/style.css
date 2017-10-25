@@ -79,13 +79,13 @@ Author: Mosaddek Hossain
 @import url("//fonts.font.im/css?family=Source+Sans+Pro|200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic");
 @import url("//fonts.font.im/css?family=Abel");
 
-@import url("bootstrap.min.css");
-@import url("bootstrap-reset.css");
-@import url("jquery-ui-1.10.3.css");
-@import url("font-awesome.css");
-@import url("simple-line-icons.css");
-@import url("icomoon-weather.css");
-@import url("default-theme.css");
+@import url("inc/bootstrap.min.css");
+@import url("inc/bootstrap-reset.css");
+@import url("inc/jquery-ui-1.10.3.css");
+@import url("inc/font-awesome.css");
+@import url("inc/simple-line-icons.css");
+@import url("inc/icomoon-weather.css");
+@import url("inc/default-theme.css");
 
 
 body {
@@ -170,6 +170,26 @@ h1,h2,h3,h4,h5 {
 
 .m-b-50 {
     margin-bottom: 50px;
+}
+
+
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+
+*::-webkit-scrollbar-thumb {
+    background-color: #342f38;
+    background-clip: padding-box;
+    min-height: 28px;
+    border-radius: 30px;
+}
+
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #a979d1;
+    opacity: 1;
 }
 
 
