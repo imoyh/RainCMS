@@ -16,6 +16,68 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`cms_io` /*!40100 DEFAULT CHARACTER SET 
 
 USE `cms_io`;
 
+/*Table structure for table `think_categorys` */
+
+DROP TABLE IF EXISTS `think_categorys`;
+
+CREATE TABLE `think_categorys` (
+  `id` int(5) NOT NULL AUTO_INCREMENT COMMENT '栏目ID',
+  `name` varchar(20) DEFAULT NULL COMMENT '栏目名',
+  `pid` int(5) DEFAULT '0' COMMENT '父级ID',
+  `level` int(1) DEFAULT '0' COMMENT '层级',
+  `sort` int(10) DEFAULT '0' COMMENT '排序',
+  `mid` int(5) DEFAULT NULL COMMENT '模型id',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `think_categorys` */
+
+/*Table structure for table `think_config` */
+
+DROP TABLE IF EXISTS `think_config`;
+
+CREATE TABLE `think_config` (
+  `name` varchar(20) NOT NULL COMMENT '配置名',
+  `value` text COMMENT '配置数据',
+  `info` varchar(255) DEFAULT NULL COMMENT '信息',
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `think_config` */
+
+/*Table structure for table `think_content` */
+
+DROP TABLE IF EXISTS `think_content`;
+
+CREATE TABLE `think_content` (
+  `id` int(20) NOT NULL AUTO_INCREMENT COMMENT '内容ID',
+  `title` varchar(255) DEFAULT NULL COMMENT '标题',
+  `content` text COMMENT '内容',
+  `kids` varchar(255) DEFAULT NULL COMMENT '关键词ID',
+  `keywords` text COMMENT '关键词',
+  `description` text COMMENT '网页描述',
+  `sort` int(10) DEFAULT '0' COMMENT '排序',
+  `add_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '添加时间',
+  `update_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `cid` int(5) DEFAULT '1' COMMENT '栏目ID',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `think_content` */
+
+/*Table structure for table `think_models` */
+
+DROP TABLE IF EXISTS `think_models`;
+
+CREATE TABLE `think_models` (
+  `id` int(5) NOT NULL AUTO_INCREMENT COMMENT '模型ID',
+  `name` varchar(20) DEFAULT NULL COMMENT '模型名称',
+  `templet` varchar(20) DEFAULT NULL COMMENT '模型对应模块',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `think_models` */
+
 /*Table structure for table `think_users` */
 
 DROP TABLE IF EXISTS `think_users`;
@@ -34,12 +96,12 @@ CREATE TABLE `think_users` (
   `status` varchar(20) NOT NULL DEFAULT 'default' COMMENT '用户状态',
   `token` char(32) DEFAULT '' COMMENT '用户识别',
   PRIMARY KEY (`id`,`username`,`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 /*Data for the table `think_users` */
 
 insert  into `think_users`(`id`,`username`,`password`,`email`,`auth_code`,`last_time`,`last_ip`,`reg_time`,`reg_ip`,`update_time`,`status`,`token`) values 
-(1,'admin','7462366fc7a082375dc751bd19bd7229','admin@admin.com','7f82bc79a652fe50a32aed3b88b769db','2017-10-20 01:38:45','127.0.0.1','2017-10-20 01:16:26','127.0.0.1',NULL,'default','');
+(1,'admin','15214a9d0236a132c48470cc18f13f67','admin@cms.io','8e22f25ca12beabdc39bdfe9a9f10ab9','2017-10-26 22:36:57','192.168.1.100','2017-10-21 13:42:36','127.0.0.1',NULL,'default','');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

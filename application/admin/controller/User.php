@@ -3,7 +3,7 @@
 // | Description: 
 // +---------------------------------------------------|
 // | Author: OuYangHao [oyhemail@163.com]
-// | Last Modified: 2017-10-22
+// | Last Modified: 2017-10-26
 //+----------------------------------------------------|
 
 namespace app\admin\controller;
@@ -89,6 +89,7 @@ class User extends Controller
      */
     public function register()
     {   
+        ## 验证是否登录
         $this->isLogin('/');
         $request = Request::instance();
 

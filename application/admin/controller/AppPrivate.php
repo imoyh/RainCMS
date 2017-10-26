@@ -3,7 +3,7 @@
 // | Description: 
 // +---------------------------------------------------|
 // | Author: OuYangHao [oyhemail@163.com]
-// | Last Modified: 2017-10-22
+// | Last Modified: 2017-10-26
 //+----------------------------------------------------|
 namespace app\admin\controller;
 
@@ -18,6 +18,7 @@ class AppPrivate extends Controller
     public function __construct()
     {
         parent::__construct();
+        $this->isNotLogin('/login');
     }
 
 }
