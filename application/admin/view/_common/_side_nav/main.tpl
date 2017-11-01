@@ -34,7 +34,7 @@
                 <a href=""><i class="fa fa-th-list"></i>  <span>内容管理</span></a>
                 <ul class="child-list">
                     <li><a href="/content/add"> 新建内容</a></li>
-                    <li><a href=""> 内容列表</a></li>
+                    <li><a href="/content/show"> 内容列表</a></li>
                     <li><a href=""> 媒体库</a></li>
                 </ul>
             </li>

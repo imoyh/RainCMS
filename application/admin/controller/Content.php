@@ -3,7 +3,7 @@
 // | Description: 
 // +---------------------------------------------------|
 // | Author: OuYangHao [oyhemail@163.com]
-// | Last Modified: 2017-10-22
+// | Last Modified: 2017-10-27
 //+----------------------------------------------------|
 namespace app\admin\controller;
 
@@ -25,7 +25,7 @@ class Content extends Controller
 
     public function show()
     {
-        # code...
+        return $this->fetch();
     }
 
 

@@ -87,6 +87,7 @@ var TreeView = function () {
                 delay: 400
             });
 
+
             $('#FlatTree').tree({
                 dataSource: treeDataSource,
                 loadingHTML: '<img src="/assets/img/spinner.gif"/>'

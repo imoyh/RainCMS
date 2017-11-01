@@ -23,12 +23,12 @@
 
         <div class="form-group">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-xs-6">
                     <a href="javascript:;">
                         <img class="captcha-img" src="/captcha" onclick="this.src=this.src"/>
                     </a>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-xs-6">
                     <label class="sr-only" for="password">验证码</label>
                     <input type="text" name="captcha" class="form-control" placeholder="验证码">
                 </div>
